@@ -143,4 +143,9 @@ set SQL_SAFE_UPDATES = 0;
 update funcionario
 	set salario = salario * 1.1
 		where genero = 'F';
+
+update funcionario
+	set cpf = "012.345.678-97"
+		where cpf = '012.345.678-90';
+        
         
