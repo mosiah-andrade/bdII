@@ -149,3 +149,37 @@ update funcionario
 		where cpf = '012.345.678-90';
         
         
+        
+UPDATE funcionario
+	SET salario = salario + 500
+		where salario <= 2000;
+        
+UPDATE funcionario 
+	SET salario = salario * 0.6;
+        
+        
+        
+        
+-- SQL: DML-DELETE
+
+delete FROM funcionario
+	where cpf = "147.471.771-41";
+    
+delete FROM funcionario
+	where cpf in (
+		select Funcionario_cpf from endereco
+			where cidade = "olinda"
+	);
+    
+select Funcionario_cpf from endereco
+	where cidade like "%linda";
+    
+start transaction;
+
+-- delete from funcionario;
+
+-- rollback;
+
+-- commit;
+
+-- DQL: SELECT
