@@ -1,84 +1,90 @@
+-- 1. Atualizar o telefone de um dentista
+UPDATE `clinicadb`.`dentista`
+SET `telefone` = '99999-1111'
+WHERE `idDentista` = 1;
 
+-- 2. Atualizar o e-mail de um funcionário
+UPDATE `clinicadb`.`funcionario`
+SET `email` = 'renato.martins@novaempresa.com'
+WHERE `idFuncionario` = 2;
 
--- 1. Deletar clínica com idClinica = 1
-DELETE FROM Clinica WHERE idClinica = 1;
+-- 3. Atualizar o salário de um funcionário
+UPDATE `clinicadb`.`funcionario`
+SET `salario` = 3500.00
+WHERE `idFuncionario` = 3;
 
--- 2. Deletar clínica onde o nome é 'Clinica Sorriso'
-DELETE FROM Clinica WHERE nome = 'Clinica Sorriso';
+-- 4. Deletar um paciente com base no CPF
+DELETE FROM `clinicadb`.`paciente`
+WHERE `CPF` = '123.456.789-00';
 
--- 3. Atualizar o telefone da clínica com idClinica = 2
-UPDATE Clinica
-SET telefone = '(11) 98765-4321'
-WHERE idClinica = 2;
+-- 5. Atualizar o status de um paciente
+UPDATE `clinicadb`.`paciente`
+SET `status` = 'Inativo'
+WHERE `idPaciente` = 5;
 
--- 4. Atualizar o horário de funcionamento da clínica 'Clínica Bem Estar'
-UPDATE Clinica
-SET horarioFuncionamento = 'Segunda a Sexta, 08:00-18:00'
-WHERE nome = 'Clínica Bem Estar';
+-- 6. Deletar um agendamento para um paciente específico
+DELETE FROM `clinicadb`.`agendamento`
+WHERE `idPaciente` = 4;
 
--- 5. Deletar o endereço com idEndereco = 5
-DELETE FROM Endereco WHERE idEndereco = 5;
+-- 7. Atualizar o nome de uma clínica
+UPDATE `clinicadb`.`clinica`
+SET `nomeFantasia` = 'Clínica Odonto Master'
+WHERE `idClinica` = 1;
 
--- 6. Deletar endereço na cidade de 'Curitiba'
-DELETE FROM Endereco WHERE cidade = 'Curitiba';
+-- 8. Atualizar o horário de funcionamento de uma clínica
+UPDATE `clinicadb`.`clinica`
+SET `horarioFuncionamento` = 'Segunda a Sexta, 09:00 - 17:00'
+WHERE `idClinica` = 2;
 
--- 7. Atualizar o bairro do endereço com idEndereco = 4 para 'Vila das Flores'
-UPDATE Endereco
-SET bairro = 'Vila das Flores'
-WHERE idEndereco = 4;
+-- 9. Deletar um endereço associado a um dentista
+DELETE FROM `clinicadb`.`endereco`
+WHERE `dentista_idDentista` = 3;
 
--- 8. Atualizar o complemento de endereço na cidade 'São Paulo'
-UPDATE Endereco
-SET complemento = 'Próximo ao Shopping'
-WHERE cidade = 'São Paulo';
+-- 10. Atualizar a cobertura de um seguro de saúde
+UPDATE `clinicadb`.`segurosaude`
+SET `cobertura` = 'Cobertura nacional'
+WHERE `idSeguro` = 6;
 
--- 9. Deletar o paciente com idPaciente = 3
-DELETE FROM Paciente WHERE idPaciente = 3;
+-- 11. Deletar um laboratório externo
+DELETE FROM `clinicadb`.`labexterno`
+WHERE `idLaboratorio` = 1;
 
--- 10. Deletar todos os pacientes com gênero 'Masculino'
-DELETE FROM Paciente WHERE genero = 'Masculino';
+-- 12. Deletar um procedimento odontológico
+DELETE FROM `clinicadb`.`procedimentoodont`
+WHERE `idProcedimento` = 2;
 
--- 11. Atualizar o telefone do paciente com idPaciente = 2
-UPDATE Paciente
-SET telefone = '(21) 98888-8888'
-WHERE idPaciente = 2;
+-- 13. Atualizar o telefone de um funcionário
+UPDATE `clinicadb`.`funcionario`
+SET `telefone` = '99999-3000'
+WHERE `idFuncionario` = 3;
 
--- 12. Atualizar o histórico do paciente com nome 'Carlos Souza'
-UPDATE Paciente
-SET historico = 'Paciente com histórico de cirurgia dental'
-WHERE nome = 'Carlos Souza';
+-- 14. Deletar um registro clínico associado a um agendamento específico
+DELETE FROM `clinicadb`.`registroclin`
+WHERE `idAgendamento` = 4;
 
--- 13. Deletar o funcionário com idFuncionario = 6
-DELETE FROM Funcionario WHERE idFuncionario = 6;
+-- 15. Atualizar o valor total de um faturamento
+UPDATE `clinicadb`.`faturamento`
+SET `valorTotal` = 1200.00
+WHERE `idFaturamento` = 3;
 
--- 14. Deletar todos os funcionários que possuem cargo 'Recepcionista'
-DELETE FROM Funcionario WHERE cargo = 'Recepcionista';
+-- 16. Deletar um faturamento de um paciente específico
+DELETE FROM `clinicadb`.`faturamento`
+WHERE `idPaciente` = 5;
 
--- 15. Atualizar o salário do funcionário com idFuncionario = 1 para 3000.00
-UPDATE Funcionario
-SET salario = 3000.00
-WHERE idFuncionario = 1;
+-- 17. Atualizar o nome de um paciente
+UPDATE `clinicadb`.`paciente`
+SET `nome` = 'Carlos Eduardo Oliveira'
+WHERE `idPaciente` = 7;
 
--- 16. Atualizar o status de funcionário com idFuncionario = 4 para 'Inativo'
-UPDATE Funcionario
-SET status = 'Inativo'
-WHERE idFuncionario = 4;
+-- 18. Deletar todos os agendamentos de um dentista específico
+DELETE FROM `clinicadb`.`agendamento`
+WHERE `idDentista` = 2;
 
--- 17. Deletar o agendamento com idAgendamento = 5
-DELETE FROM Agendamento WHERE idAgendamento = 5;
+-- 19. Atualizar o cargo de um funcionário
+UPDATE `clinicadb`.`funcionario`
+SET `cargo` = 'Coordenador de Consultório'
+WHERE `idFuncionario` = 9;
 
--- 18. Deletar todos os agendamentos relacionados ao paciente com idPaciente = 7
-DELETE FROM Agendamento WHERE idPaciente = 7;
-
--- 19. Atualizar o horário do agendamento com idAgendamento = 8 para '2025-05-12 10:00:00'
-UPDATE Agendamento
-SET dataHora = '2025-05-12 10:00:00'
-WHERE idAgendamento = 8;
-
--- 20. Atualizar o dentista do agendamento com idAgendamento = 3 para idDentista = 6
-UPDATE Agendamento
-SET idDentista = 6
-WHERE idAgendamento = 3;
-
--- 21. Deletar o registro com idRegistroClin = 2
-DELETE FROM RegistroClin WHERE idRegistroClin = 2;
+-- 20. Deletar todos os registros clínicos de um paciente específico
+DELETE FROM `clinicadb`.`registroclin`
+WHERE `idPaciente` = 6;
