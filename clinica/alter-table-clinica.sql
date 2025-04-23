@@ -1,46 +1,52 @@
--- ==============================
--- ALTERAÇÕES NAS ESTRUTURAS DAS TABELAS DO BANCO ClinicaDB
--- ==============================
+-- =======================================
+-- Alterações nas Estruturas das Tabelas
+-- Banco: clinicadb
+-- =======================================
 
--- 1. Adicionar coluna de status à tabela Paciente
-ALTER TABLE Paciente
-ADD status VARCHAR(20) DEFAULT 'Ativo';
+-- 1. Adicionar campo de foto de perfil para dentistas
+ALTER TABLE `clinicadb`.`dentista`
+ADD COLUMN `fotoPerfil` VARCHAR(255) NULL DEFAULT NULL;
 
--- 2. Alterar tipo da coluna telefone na tabela Dentista para permitir mais caracteres
-ALTER TABLE Dentista
-MODIFY telefone VARCHAR(25);
+-- 2. Adicionar data de contratação para funcionários
+ALTER TABLE `clinicadb`.`funcionario`
+ADD COLUMN `dataContratacao` DATE NULL DEFAULT NULL;
 
--- 3. Adicionar coluna de RG na tabela Funcionario
-ALTER TABLE Funcionario
-ADD RG VARCHAR(20);
+-- 3. Remover campo de complemento da tabela paciente (duplicado com endereco)
+ALTER TABLE `clinicadb`.`paciente`
+DROP COLUMN `complemento`;
 
--- 4. Adicionar coluna de horário de atendimento na tabela Dentista
-ALTER TABLE Dentista
-ADD horarioAtendimento VARCHAR(100);
+-- 4. Aumentar o tamanho do campo telefone para 25 caracteres em várias tabelas
+ALTER TABLE `clinicadb`.`paciente`
+MODIFY COLUMN `telefone` VARCHAR(25);
 
--- 5. Adicionar coluna para indicar se o agendamento foi confirmado
-ALTER TABLE Agendamento
-ADD confirmado BOOLEAN DEFAULT FALSE;
+ALTER TABLE `clinicadb`.`dentista`
+MODIFY COLUMN `telefone` VARCHAR(25);
 
--- 6. Renomear a coluna statusPag na tabela Faturamento para statusPagamento
-ALTER TABLE Faturamento
-CHANGE statusPag statusPagamento VARCHAR(50);
+ALTER TABLE `clinicadb`.`funcionario`
+MODIFY COLUMN `telefone` VARCHAR(25);
 
--- 7. Adicionar coluna de data de criação na tabela RegistroClin
-ALTER TABLE RegistroClin
-ADD dataCriacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
+ALTER TABLE `clinicadb`.`clinica`
+MODIFY COLUMN `telefone` VARCHAR(25);
 
--- 8. Adicionar campo de observações na tabela Despesa
-ALTER TABLE Despesa
-ADD observacoes TEXT;
+-- 5. Adicionar campo de senha para login de funcionários
+ALTER TABLE `clinicadb`.`funcionario`
+ADD COLUMN `senha` VARCHAR(255) NULL DEFAULT NULL;
 
--- 9. Tornar o campo email da tabela Paciente único
-ALTER TABLE Paciente
-ADD CONSTRAINT unique_email_paciente UNIQUE (email);
+-- 6. Adicionar campo tipoConsulta na tabela agendamento
+ALTER TABLE `clinicadb`.`agendamento`
+ADD COLUMN `tipoConsulta` VARCHAR(50) NULL DEFAULT NULL;
 
--- 10. Adicionar chave estrangeira idSeguro em Paciente (relaciona com SeguroSaude)
-ALTER TABLE Paciente
-ADD idSeguro INT,
-ADD CONSTRAINT fk_seguro_paciente FOREIGN KEY (idSeguro) REFERENCES SeguroSaude(idSeguro);
+-- 7. Alterar tipo de statusPag para ENUM na tabela faturamento
+ALTER TABLE `clinicadb`.`faturamento`
+MODIFY COLUMN `statusPag` ENUM('Pago', 'Pendente', 'Cancelado') DEFAULT 'Pendente';
 
+-- 8. Adicionar tipo do laboratório na tabela labexterno
+ALTER TABLE `clinicadb`.`labexterno`
+ADD COLUMN `tipoLaboratorio` VARCHAR(100) NULL DEFAULT NULL;
 
+-- 9. Tornar idPaciente auto-incrementável
+ALTER TABLE `clinicadb`.`paciente`
+MODIFY COLUMN `idPaciente` INT NOT NULL AUTO_INCREMENT;
+
+-- 10. Criar índice composto em nome e email na tabela paciente
+CREATE INDEX idx_nome_email ON `clinicadb`.`paciente` (`nome`, `email`);
