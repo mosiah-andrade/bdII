@@ -166,44 +166,6 @@ VALUES
 (9, 9, 9, 9, 9, '2025-05-13 09:00:00', 'Cirurgia oral realizada com sucesso, paciente em processo de recuperação.'),
 (10, 10, 10, 10, 10, '2025-05-14 10:00:00', 'Consultoria de saúde bucal realizada, paciente com boas condições de higiene oral.');
 
--- Inserir dados na tabela `dentista`
-INSERT INTO `clinicadb`.`dentista` (`idDentista`, `nome`, `email`, `telefone`, `especialidade`, `CFO`)
-VALUES
-(1, 'Dr. João Almeida', 'joao.almeida@dentista.com', '99999-2000', 'Endodontia', 'CFO12345'),
-(2, 'Dra. Maria Costa', 'maria.costa@dentista.com', '99999-2001', 'Ortodontia', 'CFO12346'),
-(3, 'Dr. Pedro Oliveira', 'pedro.oliveira@dentista.com', '99999-2002', 'Cirurgia Oral', 'CFO12347'),
-(4, 'Dra. Juliana Souza', 'juliana.souza@dentista.com', '99999-2003', 'Implantes Dentários', 'CFO12348'),
-(5, 'Dr. Carlos Silva', 'carlos.silva@dentista.com', '99999-2004', 'Periodontia', 'CFO12349'),
-(6, 'Dra. Fernanda Lopes', 'fernanda.lopes@dentista.com', '99999-2005', 'Clínica Geral', 'CFO12350'),
-(7, 'Dr. Roberto Lima', 'roberto.lima@dentista.com', '99999-2006', 'Estética Dentária', 'CFO12351'),
-(8, 'Dra. Ana Clara', 'ana.clara@dentista.com', '99999-2007', 'Próteses Dentárias', 'CFO12352'),
-(9, 'Dr. Eduardo Martins', 'eduardo.martins@dentista.com', '99999-2008', 'Odontopediatria', 'CFO12353'),
-(10, 'Dra. Patrícia Rocha', 'patricia.rocha@dentista.com', '99999-2009', 'Odontogeriatria', 'CFO12354');
-
--- Inserir dados na tabela `funcionario` (continuação)
-INSERT INTO `clinicadb`.`funcionario` (`idFuncionario`, `nome`, `CPF`, `dataNasc`, `genero`, `telefone`, `email`, `cargo`, `salario`, `status`)
-VALUES
-(4, 'Fernanda Souza', '456.789.012-03', '1995-07-05', 'Feminino', '99999-3003', 'fernanda.souza@funcionario.com', 'Higienista', 2800.00, 'Ativo'),
-(5, 'Lucas Pereira', '567.890.123-04', '1989-12-18', 'Masculino', '99999-3004', 'lucas.pereira@funcionario.com', 'Gerente Administrativo', 4000.00, 'Ativo'),
-(6, 'Roberta Lima', '678.901.234-05', '1993-01-25', 'Feminino', '99999-3005', 'roberta.lima@funcionario.com', 'Auxiliar de Laboratório', 2200.00, 'Ativo'),
-(7, 'Rafael Costa', '789.012.345-06', '1997-03-30', 'Masculino', '99999-3006', 'rafael.costa@funcionario.com', 'Recepcionista', 2000.00, 'Ativo'),
-(8, 'Mariana Rocha', '890.123.456-07', '1987-05-10', 'Feminino', '99999-3007', 'mariana.rocha@funcionario.com', 'Auxiliar de Consultório', 2400.00, 'Ativo'),
-(9, 'Gustavo Martins', '901.234.567-08', '1990-09-20', 'Masculino', '99999-3008', 'gustavo.martins@funcionario.com', 'Dentista', 5000.00, 'Ativo'),
-(10, 'Camila Barbosa', '012.345.678-09', '1994-11-17', 'Feminino', '99999-3009', 'camila.barbosa@funcionario.com', 'Gerente de RH', 4500.00, 'Ativo');
-
--- Inserir dados na tabela `clinica`
-INSERT INTO `clinicadb`.`clinica` (`idClinica`, `nomeFantasia`, `nome`, `CNPJ`, `telefone`, `email`, `horarioFuncionamento`, `rua`, `numero`, `bairro`, `cidade`, `UF`, `CEP`, `complemento`, `dentista_idDentista`)
-VALUES
-(1, 'Clínica Odonto X', 'Clínica Odontológica X', '12.345.678/0001-90', '4002-8922', 'contato@odontox.com', 'Segunda a Sexta, 08:00 - 18:00', 'Rua X', '123', 'Centro', 'São Paulo', 'SP', '01010-000', 'Apto 101', 1),
-(2, 'Clínica Odonto Y', 'Clínica Odontológica Y', '23.456.789/0001-91', '4002-8923', 'contato@odontoy.com', 'Segunda a Sexta, 08:00 - 18:00', 'Rua Y', '124', 'Centro', 'São Paulo', 'SP', '01020-000', 'Apto 102', 2),
-(3, 'Clínica Odonto Z', 'Clínica Odontológica Z', '34.567.890/0001-92', '4002-8924', 'contato@odontoz.com', 'Segunda a Sexta, 08:00 - 18:00', 'Rua Z', '125', 'Centro', 'São Paulo', 'SP', '01030-000', 'Apto 103', 3),
-(4, 'Clínica Odonto W', 'Clínica Odontológica W', '45.678.901/0001-93', '4002-8925', 'contato@odontow.com', 'Segunda a Sexta, 08:00 - 18:00', 'Rua W', '126', 'Centro', 'São Paulo', 'SP', '01040-000', 'Apto 104', 4),
-(5, 'Clínica Odonto V', 'Clínica Odontológica V', '56.789.012/0001-94', '4002-8926', 'contato@odontov.com', 'Segunda a Sexta, 08:00 - 18:00', 'Rua V', '127', 'Centro', 'São Paulo', 'SP', '01050-000', 'Apto 105', 5),
-(6, 'Clínica Odonto U', 'Clínica Odontológica U', '67.890.123/0001-95', '4002-8927', 'contato@odontou.com', 'Segunda a Sexta, 08:00 - 18:00', 'Rua U', '128', 'Centro', 'São Paulo', 'SP', '01060-000', 'Apto 106', 6),
-(7, 'Clínica Odonto T', 'Clínica Odontológica T', '78.901.234/0001-96', '4002-8928', 'contato@odontot.com', 'Segunda a Sexta, 08:00 - 18:00', 'Rua T', '129', 'Centro', 'São Paulo', 'SP', '01070-000', 'Apto 107', 7),
-(8, 'Clínica Odonto S', 'Clínica Odontológica S', '89.012.345/0001-97', '4002-8929', 'contato@odontos.com', 'Segunda a Sexta, 08:00 - 18:00', 'Rua S', '130', 'Centro', 'São Paulo', 'SP', '01080-000', 'Apto 108', 8),
-(9, 'Clínica Odonto R', 'Clínica Odontológica R', '90.123.456/0001-98', '4002-8930', 'contato@odontor.com', 'Segunda a Sexta, 08:00 - 18:00', 'Rua R', '131', 'Centro', 'São Paulo', 'SP', '01090-000', 'Apto 109', 9),
-(10, 'Clínica Odonto Q', 'Clínica Odontológica Q', '01.234.567/0001-99', '4002-8931', 'contato@odontoq.com', 'Segunda a Sexta, 08:00 - 18:00', 'Rua Q', '132', 'Centro', 'São Paulo', 'SP', '01100-000', 'Apto 110', 10);
 
 -- Inserir dados na tabela `endereco`
 INSERT INTO `clinicadb`.`endereco` (`idEndereco`, `rua`, `numero`, `bairro`, `cidade`, `UF`, `CEP`, `complemento`, `dentista_idDentista`, `funcionario_idFuncionario`, `clinica_idClinica`)
