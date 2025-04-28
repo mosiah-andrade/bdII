@@ -16,7 +16,7 @@ select cpf_passaporte "CPF ou PAssaporte",
 		order by nome;
 
 
-
+ 
 select cidade, count(funcionario_cpf)
 	from endereco
 		group by cidade;
