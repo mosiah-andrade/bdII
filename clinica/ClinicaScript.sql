@@ -151,7 +151,7 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- Table `clinicadb`.`agendamento`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `clinicadb`.`agendamento` (
-  `idAgendamento` INT NOT NULL,
+  `idAgendamento` INT NOT NULL AUTO_INCREMENT,
   `dataHora` DATETIME NULL DEFAULT NULL,
   `idPaciente` INT NULL DEFAULT NULL,
   `idDentista` INT NULL DEFAULT NULL,
