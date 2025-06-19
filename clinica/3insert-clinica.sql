@@ -56,20 +56,18 @@ VALUES
 (10, 'Rua J', '1000', 'Vila Carolina', 'Curitiba', 'PR', '82000-100', 'Apartamento 501', 10, 10, 10);
 
 -- Inserir dados na tabela `paciente`
-INSERT INTO `clinicadb`.`paciente` (idPaciente, nome, CPF, dataNasc, genero, telefone, email, historico, rua, numero, bairro, cidade, UF, CEP, complemento, endereco_idEndereco)
+INSERT INTO `clinicadb`.`paciente` (idPaciente, nome, CPF, dataNasc, genero, telefone, email, historico, rua, numero, bairro, cidade, UF, CEP, endereco_idEndereco)
 VALUES
-(1, 'Maria Silva', '123.456.789-00', '1990-05-15', 'Feminino', '(11) 98765-4321', 'maria.silva@email.com', 'Nenhuma condição pré-existente', 'Rua A', '100', 'Centro', 'São Paulo', 'SP', '01000-000', 'Apartamento 101', 1),
-(2, 'João Oliveira', '234.567.890-11', '1985-08-22', 'Masculino', '(21) 98765-4321', 'joao.oliveira@email.com', 'Alergia a amendoim', 'Rua B', '200', 'Jardim Botânico', 'Rio de Janeiro', 'RJ', '22010-200', 'Casa 5', 2),
-(3, 'Ana Souza', '345.678.901-22', '1975-11-05', 'Feminino', '(31) 99988-7766', 'ana.souza@email.com', 'Hipertensão', 'Rua C', '300', 'Alto da Lapa', 'Belo Horizonte', 'MG', '30330-300', 'Bloco A, Andar 3', 3),
-(4, 'Carlos Pereira', '456.789.012-33', '1992-01-10', 'Masculino', '(41) 98877-6655', 'carlos.pereira@email.com', 'Nenhuma condição pré-existente', 'Rua D', '400', 'Centro', 'Curitiba', 'PR', '80010-400', 'Casa 10', 4),
-(5, 'Juliana Costa', '567.890.123-44', '1988-02-28', 'Feminino', '(51) 99123-4567', 'juliana.costa@email.com', 'Asma', 'Rua E', '500', 'Vila São João', 'Porto Alegre', 'RS', '90010-500', 'Apartamento 202', 5),
-(6, 'Roberto Almeida', '678.901.234-55', '2000-06-10', 'Masculino', '(61) 99234-8765', 'roberto.almeida@email.com', 'Nenhuma condição pré-existente', 'Rua F', '600', 'Vila Nova', 'Brasília', 'DF', '70000-600', 'Sobrado', 6),
-(7, 'Fernanda Lima', '789.012.345-66', '1995-07-25', 'Feminino', '(11) 95555-1234', 'fernanda.lima@email.com', 'Diabetes tipo 1', 'Rua G', '700', 'Jardim das Flores', 'São Paulo', 'SP', '05000-700', 'Casa 12', 7),
-(8, 'Ricardo Santos', '890.123.456-77', '1982-09-30', 'Masculino', '(21) 98888-1234', 'ricardo.santos@email.com', 'Nenhuma condição pré-existente', 'Rua H', '800', 'Vila América', 'Rio de Janeiro', 'RJ', '21000-800', 'Casa 15', 8),
-(9, 'Larissa Oliveira', '901.234.567-88', '1998-03-14', 'Feminino', '(61) 98345-6789', 'larissa.oliveira@email.com', 'Tireoidite', 'Rua I', '900', 'Parque dos Ipês', 'Brasília', 'DF', '71000-900', 'Apartamento 304', 9),
-(10, 'Felipe Martins', '012.345.678-99', '2002-12-22', 'Masculino', '(41) 98888-1234', 'felipe.martins@email.com', 'Nenhuma condição pré-existente', 'Rua J', '1000', 'Vila Carolina', 'Curitiba', 'PR', '82000-100', 'Apartamento 501', 10);
-
-
+(1, 'Maria Silva', '123.456.789-00', '1990-05-15', 'Feminino', '(11) 98765-4321', 'maria.silva@email.com', 'Nenhuma condição pré-existente', 'Rua A', '100', 'Centro', 'São Paulo', 'SP', '01000-000', 1),
+(2, 'João Oliveira', '234.567.890-11', '1985-08-22', 'Masculino', '(21) 98765-4321', 'joao.oliveira@email.com', 'Alergia a amendoim', 'Rua B', '200', 'Jardim Botânico', 'Rio de Janeiro', 'RJ', '22010-200', 2),
+(3, 'Ana Souza', '345.678.901-22', '1975-11-05', 'Feminino', '(31) 99988-7766', 'ana.souza@email.com', 'Hipertensão', 'Rua C', '300', 'Alto da Lapa', 'Belo Horizonte', 'MG', '30330-300', 3),
+(4, 'Carlos Pereira', '456.789.012-33', '1992-01-10', 'Masculino', '(41) 98877-6655', 'carlos.pereira@email.com', 'Nenhuma condição pré-existente', 'Rua D', '400', 'Centro', 'Curitiba', 'PR', '80010-400', 4),
+(5, 'Juliana Costa', '567.890.123-44', '1988-02-28', 'Feminino', '(51) 99123-4567', 'juliana.costa@email.com', 'Asma', 'Rua E', '500', 'Vila São João', 'Porto Alegre', 'RS', '90010-500', 5),
+(6, 'Roberto Almeida', '678.901.234-55', '2000-06-10', 'Masculino', '(61) 99234-8765', 'roberto.almeida@email.com', 'Nenhuma condição pré-existente', 'Rua F', '600', 'Vila Nova', 'Brasília', 'DF', '70000-600', 6),
+(7, 'Fernanda Lima', '789.012.345-66', '1995-07-25', 'Feminino', '(11) 95555-1234', 'fernanda.lima@email.com', 'Diabetes tipo 1', 'Rua G', '700', 'Jardim das Flores', 'São Paulo', 'SP', '05000-700', 7),
+(8, 'Ricardo Santos', '890.123.456-77', '1982-09-30', 'Masculino', '(21) 98888-1234', 'ricardo.santos@email.com', 'Nenhuma condição pré-existente', 'Rua H', '800', 'Vila América', 'Rio de Janeiro', 'RJ', '21000-800', 8),
+(9, 'Larissa Oliveira', '901.234.567-88', '1998-03-14', 'Feminino', '(61) 98345-6789', 'larissa.oliveira@email.com', 'Tireoidite', 'Rua I', '900', 'Parque dos Ipês', 'Brasília', 'DF', '71000-900', 9),
+(10, 'Felipe Martins', '012.345.678-99', '2002-12-22', 'Masculino', '(41) 98888-1234', 'felipe.martins@email.com', 'Nenhuma condição pré-existente', 'Rua J', '1000', 'Vila Carolina', 'Curitiba', 'PR', '82000-100', 10);
 
 
 -- Inserir dados na tabela `faturamento`
