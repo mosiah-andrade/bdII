@@ -136,7 +136,7 @@ DELIMITER ;
 
 -- call
 CALL FinalizarConsultaERegistrarFaturamento(
-    12,  
+    1,  
     2,    
     1,    
     3,    
