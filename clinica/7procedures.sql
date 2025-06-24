@@ -158,7 +158,7 @@ CREATE PROCEDURE RegistrarPagamentoFatura(
     IN p_idFatura INT,
     IN p_idPaciente INT,
     IN p_valorPago DECIMAL(10, 2)
-)
+    )
 BEGIN
     -- Declara uma variável local para armazenar o novo saldo da fatura
     DECLARE v_novoValorTotal DECIMAL(10, 2);
@@ -180,11 +180,6 @@ BEGIN
         WHERE idFaturamento = p_idFatura;
     END IF;
 
-    -- 4. Atualiza o status do paciente
-    UPDATE paciente
-    SET status = 'Faturado'
-    WHERE idPaciente = p_idPaciente;
-
 END$$
 
 DELIMITER ;
@@ -194,7 +189,7 @@ call RegistrarPagamentoFatura(
     2, 
     2, 
     200.00
-);
+    );
 --------------------------------------------------------------------------
 
 -- 4. Registrar Novo Procedimento
